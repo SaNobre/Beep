@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char *argv[])
+{
+             int x; // Numero de vezes que o usuario quer que seja emitido o Beep
+             int count = 1; //Contador
+INICIO: // Tela inicial
+             printf("Digite o numero de vezes que você quer que seja emitido o Beep (0 para sair): ");
+             scanf("%d",&x);
+    
+ if ((x == 0)) // Se o usuario digitar 0...
+ {
+        printf("\nVoce escolheu sair\n\n");
+ goto SAIDA; // Sair do programa
+}
+  count = 1;
+  do
+  {
+                // Incrementa o count e toca o beep até que count fique com o mesmo valor que o numero digitado pelo usuario
+                count++; 
+                // Emite o beep e mprime na tela o numero de Beeps que foram emitidos
+                printf("\nBip numero %d\a\n",count-1);
+                // Pula uma linha
+                printf("\n");
+  }
+  while (count <= x);
+  goto INICIO; // Volta ao inicio
+  
+  SAIDA:
+  system("PAUSE");	
+  return 0;
+}
